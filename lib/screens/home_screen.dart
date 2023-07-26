@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/screens/hotel_screen.dart';
 import 'package:ticketbookingapp/screens/ticket_view.dart';
+import 'package:ticketbookingapp/utils/app_info_list.dart';
 import 'package:ticketbookingapp/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final Map<String, dynamic> hotel;
+  const HomeScreen({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,13 +80,16 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          const SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 20),
-            child: Row(children: [
-              TicketView(),
-              TicketView(),
-            ]),
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: ticketList
+                  .map((singleTicket) => TicketView(
+                        ticket: singleTicket,
+                      ))
+                  .toList(),
+            ),
           ),
           const Gap(15),
           Container(
@@ -105,15 +110,13 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          const SingleChildScrollView(
+          SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
-            child: Row(children: [
-              HotelScreen(),
-              HotelScreen(),
-              HotelScreen(),
-              HotelScreen(),
-            ]),
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+                children: hotelList
+                    .map((singleHotel) => HotelScreen(hotel: singleHotel))
+                    .toList()),
           ),
         ],
       ),

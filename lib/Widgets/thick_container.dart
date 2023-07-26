@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 class ThickContainer extends StatelessWidget {
   const ThickContainer({Key? key}) : super(key: key);

@@ -5,7 +5,8 @@ import 'package:ticketbookingapp/utils/app_layout.dart';
 import 'package:ticketbookingapp/utils/app_styles.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({Key? key}) : super(key: key);
+  final Map<String, dynamic> ticket;
+  const TicketView({Key? key, required this.ticket}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text("NYC",
+                      Text(ticket['from']['code'],
                           style: Styles.headLineStyle3
                               .copyWith(color: Colors.white)),
                       Expanded(child: Container()),
@@ -79,7 +80,7 @@ class TicketView extends StatelessWidget {
                       ),
                       ThickContainer(),
                       Expanded(child: Container()),
-                      Text("LDN",
+                      Text(ticket['to']['code'],
                           style: Styles.headLineStyle3
                               .copyWith(color: Colors.white))
                     ],
@@ -90,18 +91,18 @@ class TicketView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: Text('New York',
+                        child: Text(ticket['from']['name'],
                             style: Styles.headLineStyle4
                                 .copyWith(color: Colors.white)),
                       ),
                       Text(
-                        "8H 30M",
+                        ticket['flying_time'],
                         style:
                             Styles.headLineStyle4.copyWith(color: Colors.white),
                       ),
                       SizedBox(
                         width: 100,
-                        child: Text('London',
+                        child: Text(ticket['to']['name'],
                             textAlign: TextAlign.end,
                             style: Styles.headLineStyle4
                                 .copyWith(color: Colors.white)),
@@ -247,4 +248,6 @@ class TicketView extends StatelessWidget {
       ),
     );
   }
+
+  toList() {}
 }

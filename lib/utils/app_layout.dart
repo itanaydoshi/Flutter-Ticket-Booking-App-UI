@@ -11,7 +11,7 @@ class AppLayout {
   }
 
   static getScreenWidth() {
-    return Get.height;
+    return Get.width;
   }
 
   static getHeight(double pixels) {
@@ -19,8 +19,8 @@ class AppLayout {
     return getScreenHeight() / x;
   }
 
-  static getHeight(double pixels) {
-    double x = getScreenHeight() / pixels;
-    return getScreenHeight() / x;
+  static getWidth(double pixels) {
+    double x = getScreenWidth() / pixels;
+    return getScreenWidth() / x;
   }
 }

@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticketbookingapp/Widgets/double_text_widget.dart';
 import 'package:ticketbookingapp/screens/hotel_screen.dart';
 import 'package:ticketbookingapp/screens/ticket_view.dart';
 import 'package:ticketbookingapp/utils/app_info_list.dart';
@@ -62,27 +63,15 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Upcoming Flights", style: Styles.headLineStyle2),
-                    InkWell(
-                      onTap: () {
-                        print("You are Tapped");
-                      },
-                      child: Text("View all",
-                          style: Styles.textStyle
-                              .copyWith(color: Styles.primaryColor)),
-                    ),
-                  ],
-                ),
+                const AppDoubleTextWidget(
+                    bigText: "Upcoming flights", smallText: "View all")
               ],
             ),
           ),
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
               children: ticketList
                   .map((singleTicket) => TicketView(
@@ -93,22 +82,9 @@ class HomeScreen extends StatelessWidget {
           ),
           const Gap(15),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headLineStyle2),
-                InkWell(
-                  onTap: () {
-                    print("You are Tapped");
-                  },
-                  child: Text("View all",
-                      style: Styles.textStyle
-                          .copyWith(color: Styles.primaryColor)),
-                ),
-              ],
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const AppDoubleTextWidget(
+                  bigText: "Hotels", smallText: "View all")),
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,

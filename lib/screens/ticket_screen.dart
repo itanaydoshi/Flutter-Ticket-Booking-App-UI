@@ -161,9 +161,13 @@ class TicketScreen extends StatelessWidget {
           top: AppLayout.getHeight(295),
           child: Container(
             padding: const EdgeInsets.all(3),
-            decoration: BoxDecoration(shape: BoxShape.circle,border: Border.all(color: 
-            Styles.textColor,width: 2)),
-            child: CircleAvatar(maxRadius: 4,backgroundColor: Styles.textColor,),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: 2)),
+            child: CircleAvatar(
+              maxRadius: 4,
+              backgroundColor: Styles.textColor,
+            ),
           ),
         ),
         Positioned(
@@ -171,9 +175,13 @@ class TicketScreen extends StatelessWidget {
           top: AppLayout.getHeight(295),
           child: Container(
             padding: const EdgeInsets.all(3),
-            decoration: BoxDecoration(shape: BoxShape.circle,border: Border.all(color: 
-            Styles.textColor,width: 2)),
-            child: CircleAvatar(maxRadius: 4,backgroundColor: Styles.textColor,),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: 2)),
+            child: CircleAvatar(
+              maxRadius: 4,
+              backgroundColor: Styles.textColor,
+            ),
           ),
         ),
       ]),

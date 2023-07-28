@@ -26,7 +26,7 @@ class AppColumnLayout extends StatelessWidget {
         Text(firstText,
             style: isColor == null
                 ? Styles.headLineStyle3.copyWith(color: Colors.black)
-                : Styles.headLineStyle3),
+                : Styles.headLineStyle3.copyWith(color: Colors.black)),
         Gap(AppLayout.getHeight(14)),
         Text(secondText,
             style: isColor == null

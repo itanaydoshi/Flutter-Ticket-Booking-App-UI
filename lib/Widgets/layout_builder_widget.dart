@@ -18,7 +18,7 @@ class AppLayoutBuilderWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
           children: List.generate(
-            (constraints.constrainWidth() / 6).floor(),
+            (constraints.constrainWidth() / sections).floor(),
             (index) => SizedBox(
               width: width,
               height: 1,

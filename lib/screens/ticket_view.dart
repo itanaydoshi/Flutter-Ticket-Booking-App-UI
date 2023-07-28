@@ -63,7 +63,7 @@ class TicketView extends StatelessWidget {
                                   child: Icon(Icons.local_airport_rounded,
                                       color: isColor == null
                                           ? Colors.white
-                                          : Color(0xFF8ACCF7))),
+                                          : const Color(0xFF8ACCF7))),
                             )
                           ],
                         ),

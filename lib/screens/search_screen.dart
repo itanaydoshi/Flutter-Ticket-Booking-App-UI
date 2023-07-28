@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticketbookingapp/Widgets/tickets_tab.dart';
 import 'package:ticketbookingapp/utils/app_layout.dart';
 import 'package:ticketbookingapp/utils/app_styles.dart';
 import '../widgets/icon_text_widget.dart';
@@ -22,71 +23,16 @@ class SearchScreen extends StatelessWidget {
           Gap(AppLayout.getHeight(40)),
           Text(
             "What are you looking for?",
-            style: Styles.headLineStyle1.copyWith(
-              fontSize: AppLayout.getWidth(35),
-            ),
+            style: Styles.headLineStyle1
+                .copyWith(fontSize: AppLayout.getWidth(35)),
           ),
           Gap(AppLayout.getHeight(20)),
-          FittedBox(
-            fit: BoxFit.contain,
-            child: Row(
-              children: [
-                /*
-                airline tickets
-                */
-                Container(
-                  width: size.width * 0.44,
-                  padding: EdgeInsets.symmetric(
-                    vertical: AppLayout.getHeight(7),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(AppLayout.getHeight(50)),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Airline Tickets",
-                      style: Styles.textStyle, // Add the text style here
-                    ),
-                  ),
-                ),
-
-                /*
-                hotels
-                */
-                Container(
-                  width: size.width * 0.44,
-                  padding: EdgeInsets.symmetric(
-                    vertical: AppLayout.getHeight(7),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(AppLayout.getHeight(50)),
-                    ),
-                    color: Colors.transparent,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Hotels",
-                      style: Styles.textStyle, // Add the text style here
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const AppTicketTabs(firstTab: "AirLine Tickets", secondTab: "Hotels"),
           Gap(AppLayout.getHeight(25)),
           const AppIconText(
-            icons: Icons.flight_takeoff_rounded,
-            text: "Departure",
-          ),
+              icons: Icons.flight_takeoff_rounded, text: "Departure"),
           Gap(AppLayout.getHeight(20)),
-          const AppIconText(
-            icons: Icons.flight_land_rounded,
-            text: "Arrival",
-          ),
+          const AppIconText(icons: Icons.flight_land_rounded, text: "Arrival"),
           Gap(AppLayout.getHeight(25)),
           Container(
             padding: EdgeInsets.symmetric(
@@ -100,17 +46,13 @@ class SearchScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 'Find tickets',
-                style: Styles.textStyle.copyWith(
-                  color: Colors.white,
-                ),
+                style: Styles.textStyle.copyWith(color: Colors.white),
               ),
             ),
           ),
           Gap(AppLayout.getHeight(40)),
           const AppDoubleTextWidget(
-            bigText: "Upcoming flights",
-            smallText: "View all",
-          ),
+              bigText: "Upcoming flights", smallText: "View all"),
           Gap(AppLayout.getHeight(15)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -199,8 +141,8 @@ class SearchScreen extends StatelessWidget {
                           padding: EdgeInsets.all(AppLayout.getHeight(30)),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            border:
-                                Border.all(width: 18, color: Color(0xFF189999)),
+                            border: Border.all(
+                                width: 18, color: const Color(0xFF189999)),
                             color: Colors.transparent,
                           ),
                         ),

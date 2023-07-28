@@ -5,14 +5,14 @@ import 'package:ticketbookingapp/utils/app_styles.dart';
 
 class HotelScreen extends StatelessWidget {
   final Map<String, dynamic> hotel;
-  HotelScreen({Key? key, required this.hotel}) : super(key: key);
+  const HotelScreen({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     print('Hotel Price is ${hotel['price']}');
-    final Size = AppLayout.getSize(context);
+    final size = AppLayout.getSize(context);
     return Container(
-      width: Size.width * 0.6,
+      width: size.width * 0.6,
       height: AppLayout.getHeight(350),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
       margin: const EdgeInsets.only(right: 17, top: 5),

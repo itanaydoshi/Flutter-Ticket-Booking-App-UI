@@ -134,13 +134,13 @@ class ProfileScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
+                      maxRadius: 25,
+                      backgroundColor: Colors.white,
                       child: Icon(
                         FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
                         color: Styles.primaryColor,
                         size: 27,
                       ),
-                      maxRadius: 25,
-                      backgroundColor: Colors.white,
                     ),
                     Gap(AppLayout.getHeight(12)),
                     Column(
